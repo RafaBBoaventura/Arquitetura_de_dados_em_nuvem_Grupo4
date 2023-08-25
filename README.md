@@ -12,8 +12,12 @@ O objetivo deste trabalho é fazer uma análise histórica sobre a variação de
 Alguns dos objetivos chaves e análises que serão realizadas ao longo do projeto são:
 
 • Quantidade de postos pesquisados. 
+
 • Evolução do preço médio, máximo e mínimo de revenda ao longo do tempo.
+
 • Preço de revenda por região e estados do Brasil.
+
 • Análise de qual produto teve maior variação (%) de preço. 
+
 • Interessante explorar outras informações que possam complementar a análise e ter algum impacto / relação com o aumento dos preços, como: Histórico do PIB, variação do IPCA, ocorrência de eventos mundiais (ex.pandemia, guerras), valor do salário mínimo, cotação do dólar, mudança na política de preço da Petrobras entre outros.
 
