@@ -21,3 +21,4 @@ Alguns dos objetivos chaves e análises que serão realizadas ao longo do projet
 
 • Interessante explorar outras informações que possam complementar a análise e ter algum impacto / relação com o aumento dos preços, como: Histórico do PIB, variação do IPCA, ocorrência de eventos mundiais (ex.pandemia, guerras), valor do salário mínimo, cotação do dólar, mudança na política de preço da Petrobras entre outros.
 
+Fonte dos dados: https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp
