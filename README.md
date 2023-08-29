@@ -2,6 +2,11 @@
 
 Repositório criado para disponibilizar a documentação inicial e os demais arquivos a serem criados ao longo deste projeto. Projeto realizado para a disciplina de Projeto: Arquitetura de Dados em Nuvem
 
+*Componentes*
+Felipe Oliveira Martins
+Rafael Barroso De Oliveira
+Natalia De Souza Lomba Dos Santos
+
 *1.	Introdução*
 
 Nossa empresa é uma consultoria que faz analise e levantamento de dados para auxiliar as empresas nas tomadas de decisão. Fomos acionados por uma transportadora de grande porte, que atua há mais de 30 anos no mercado de transporte de cargas e possui uma tecnologia que monitora o consumo de combustível por KM rodado e faz o monitoramento pela rota de viagem programada para o veículo. 
