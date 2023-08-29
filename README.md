@@ -3,6 +3,7 @@
 Repositório criado para disponibilizar a documentação inicial e os demais arquivos a serem criados ao longo deste projeto. Projeto realizado para a disciplina de Projeto: Arquitetura de Dados em Nuvem
 
 *Componentes*
+
 Felipe Oliveira Martins
 Rafael Barroso De Oliveira
 Natalia De Souza Lomba Dos Santos
