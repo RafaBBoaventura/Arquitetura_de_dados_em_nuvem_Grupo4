@@ -5,7 +5,9 @@ Repositório criado para disponibilizar a documentação inicial e os demais arq
 *Componentes*
 
 Felipe Oliveira Martins
+
 Rafael Barroso De Oliveira
+
 Natalia De Souza Lomba Dos Santos
 
 *1.	Introdução*
