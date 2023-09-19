@@ -1,0 +1,30 @@
+# **Governança de dados:**
+
+A governança de dados é o conjunto de políticas, processos e práticas que visam garantir que os dados sejam geridos de maneira eficaz e eficiente, a fim de maximizar seu valor e minimizar seus riscos.
+```
+
+# **Importância:**
+
+A governança de dados é fundamental para garantir que os dados sejam confiáveis, precisos e protegidos, e para assegurar que os usuários finais tenham acesso aos dados de que precisam para tomar decisões informadas.
+```
+
+# **Arquitetura de Dados:** 
+
+Para definir a arquitetura do nosso projeto foi necessário fazer um planejamento sobre a estrutura necessária e definir qual seria a lógica seguida. Com base nisso, definimos a estrutura que está exposta abaixo em um esquema ilustrativo, representado pela figura 1.
+Na figura 1, a fonte de dados é composta pela base de dados disponibilizada no site da ANP (Agência Nacional do Petróleo) e que pode ser consultada através do site: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/serie-historica-do-levantamento-de-precos . A base de dados encontra-se em formato XML no Excel e traz o levantamento semanal de preços dos combustíveis estratificada por munícipios. 
+Ainda na figura 1, usamos a solução de armazenamento da Microsoft para cloud o Blob para armazenar as planilhas exportadas do site da ANP e para integração e transformação de dados usamos do serviço Data Factory. Após tratadas a tabela final foi carregada no Synapse Analytics. 
+![image](https://github.com/RafaBBoaventura/Projeto_de_Big_Data_Analytics/assets/131798428/36d78165-4764-47c2-ba8a-98a6bf251add)
+
+# **Modelagem:**
+A modelagem de dados abordada foi a Star Schema, que indica que uma estrutura de dados deve seguir uma tabela de FATOS rodeada por DIMENSÕES, dando um aspecto de uma estrela.
+
+# **Gerenciamento de segurança de dados:**
+
+É o processo de coletar, armazenar, proteger e usar os dados de uma organização. 
+Protege os dados contra ameaças internas e externas e garante a confiabilidade, integridade e disponibilidade dos dados. 
+Os dados escolhidos para este projeto são dados públicos e seguem as práticas de governança e segurança dos dados implementadas pelos órgãos federais competentes. A Governança de Dados da administração pública federal direta, autárquica e fundacional atualmente é regulamentada pelo Decreto nº 10.046, de 9 de outubro de 2019, o qual orienta sobre as ações de gerenciamento de dados sob as perspectivas do compartilhamento, da arquitetura, da segurança, da qualidade, da operação e de outros aspectos tecnológicos. 
+Dentre as ações implementadas no âmbito da governança de dados está a Trilha de governança de dados. A Trilha de Governança de Dados tem por objetivo contribuir para a implementação da cultura de dados no âmbito do Poder Executivo Federal, a partir da legislação vigente e das diretrizes de privacidade, transparência, proteção de dados, criação de valor, ética, melhora da atuação estatal e eficiência, no uso dos dados em benefício do cidadão.
+A trilha visa ainda orientar os órgãos para uma jornada que pretende alinhar infraestrutura, regulação, economia digital e pessoas aos valores sociais no uso de dados pelo governo, garantindo a proteção dos direitos individuais do cidadão.
+O Fórum de Governança de Dados é um evento lançado pela Secretaria de Governo Digital em dezembro de 2022 com objetivo de criar uma rede na Administração Pública para troca de experiências e impulsionar o aculturamento em governança de dados do setor público. Especialmente entre os órgãos do Poder Executivo federal. O evento acontece mensalmente sempre com pautas sugeridas pelos participantes.
+O Comitê Central de Governança de Dados (CCGD) foi instituído pelo Decreto 10.046, de 9 de outubro de 2019, com competências para deliberar, dentre outras, sobre as orientações e as diretrizes para a categorização de compartilhamento amplo, restrito e específico, e a forma e o meio de publicação dessa categorização, observada a legislação pertinente, referente à proteção de dados pessoais; e as orientações e as diretrizes para a integração dos órgãos e das entidades com o Cadastro Base do Cidadão.
+
