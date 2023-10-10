@@ -70,7 +70,53 @@ O Fórum de Governança de Dados é um evento lançado pela Secretaria de Govern
 
 O Comitê Central de Governança de Dados (CCGD) foi instituído pelo Decreto 10.046, de 9 de outubro de 2019, com competências para deliberar, dentre outras, sobre as orientações e as diretrizes para a categorização de compartilhamento amplo, restrito e específico, e a forma e o meio de publicação dessa categorização, observada a legislação pertinente, referente à proteção de dados pessoais; e as orientações e as diretrizes para a integração dos órgãos e das entidades com o Cadastro Base do Cidadão.
 
+**6. Metodologia:**
 
+Foi criado na plataforma Azure um grupo de recursos com as ferramentas e serviços que serão utilizados no projeto. 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/5b9eb89b-b36d-4624-8f01-ed07aa4f87aa) 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/a2106946-9db0-4af9-9c21-1518b3794578)
 
+A base de dados definida está no formato CSV, extraída do site de Dados Abertos, foi importada para o Blob.
 
+Para importar o arquivo para o Blob foi necessário a criação de um recurso através das storage accounts (contas de armazenamento).
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/2c7bdb87-7de7-452c-83c5-d4ce654a587d)
+
+Após acessar a conta de armazenamento clique em +criar para fazer a criação.
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/eeed630f-e039-41af-8ab0-fb7d0a82a1e7)
+
+Em seguida, acesse a conta de armazenamento criada e selecione a opção contêineres.
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/f78e5a66-919d-4d07-811c-cb38b9ec8d2e) 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/6a96b33b-a13c-4221-bef8-ae222009e0e4)
+
+Foi criado então um novo contêiner com o nome dadosbrutos e, dentro dele, realizado o upload das tabelas que foram extraídas do site de Dados Abertos. 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/8739888f-dc7e-4fc7-a726-bef68f41d888)
+
+Em seguida no Data Factories foi criada uma nova pipeline com o nome ProjetoPUC.
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/5dcf7249-475d-496a-bf3e-e498abcfbb0c)
+
+Em conjuntos de dados foi criado um fluxo de dados (dataflow) com o nome carregados. 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/e30c3b4c-8ca8-404d-b296-2e2d26004aff)
+
+Dentro desse fluxo de dados foram importadas as tabelas de dados que estavam armazenadas no Blob. 
+
+E foi realizado o tratamento das tabelas onde foi feita a exclusão das colunas que não seriam necessarias para o projeto (5 ultimas coluna conforme mostra a figura abaixo) e também a união dos dados, transformando em uma única tabela chamada tabela final. 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/6fac9d1d-f721-4643-b3d7-52502e890387)
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/02cf3a95-2add-4b35-af9b-055dac53b974)
+
+Essa tabela final foi alocada no Synapse Analytics com todos os dados já tratados para a próxima etapa do projeto.
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/1c040eb9-5b83-4d10-843d-f0a56d05977a)
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/558a1524-d5eb-4d4e-a341-e3004610e574)
+
+Além disso, acrescentamos uma tabela com a informação do preço do barril de petróleo na bolsa de valores de Nova Iorque.
+
+Essa tabela foi retirada do site http://www.ipeadata.gov.br/Default.aspx para o enriquecimento do resultado final. 
+
+Foi realizado o mesmo processo das tabelas anteriores: foi extraída do site em formato CSV, em sequência foi importada para o contêiner com o nome dadosbrutos no Blob. 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/bebcdcb4-8a0d-475f-a56c-10531eade352)
+
+Em seguida no data factory, pipeline ProjetoPUC data flow, foi realizado o tratamento da tabela. Nesse tratamento, excluímos os dados entre 1987 a 2003 que não seriam utilizados para os fins desse projeto. 
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/ff76b789-f0af-4545-b645-74aa6b6cfba0)
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/f4c6b228-f6f3-4e31-a2b2-920bd7c0925c)
+
+As tabelas (TabelaFinal e tabelafinal2) foram alocadas no Synapse Analytics com todos os dados já tratados para etapa final de visualização.
 
