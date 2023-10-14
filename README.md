@@ -79,9 +79,11 @@ Foi criado na plataforma Azure um grupo de recursos com as ferramentas e serviç
 A base de dados definida está no formato CSV, extraída do site de Dados Abertos, foi importada para o Blob.
 
 Para importar o arquivo para o Blob foi necessário a criação de um recurso através das storage accounts (contas de armazenamento).
+
 ![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/2c7bdb87-7de7-452c-83c5-d4ce654a587d)
 
 Após acessar a conta de armazenamento clique em +criar para fazer a criação.
+
 ![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/eeed630f-e039-41af-8ab0-fb7d0a82a1e7)
 
 Em seguida, acesse a conta de armazenamento criada e selecione a opção contêineres.
