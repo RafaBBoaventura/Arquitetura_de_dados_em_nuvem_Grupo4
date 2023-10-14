@@ -45,7 +45,7 @@ Para definir a arquitetura do nosso projeto foi necessário fazer um planejament
 
 ![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/09a8561f-2df7-4dd1-98cd-3d237c7494ee)
 
-Na figura 1, a fonte de dados é composta pela base de dados disponibilizada no site da ANP (Agência Nacional do Petróleo) e que pode ser consultada através do site: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/serie-historica-do-levantamento-de-precos . A base de dados encontra-se em formato XML no Excel e traz o levantamento semanal de preços dos combustíveis estratificada por munícipios. 
+Na figura 1, a fonte de dados é composta pela base de dados disponibilizada no site de Dados Abertos do Governo e que pode ser consultada através do site: https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp. A base de dados encontra-se em formato XML no Excel e traz o levantamento semanal de preços dos combustíveis estratificada por munícipios. 
 Ainda na figura 1, usamos a solução de armazenamento da Microsoft para cloud o Blob para armazenar as planilhas exportadas do site da ANP e para integração e transformação de dados usamos do serviço Data Factory. Após tratadas a tabela final foi carregada no Synapse Analytics. 
 
 **4. Modelagem:**
@@ -73,6 +73,7 @@ O Comitê Central de Governança de Dados (CCGD) foi instituído pelo Decreto 10
 **6. Metodologia:**
 
 Foi criado na plataforma Azure um grupo de recursos com as ferramentas e serviços que serão utilizados no projeto. 
+
 ![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/5b9eb89b-b36d-4624-8f01-ed07aa4f87aa) 
 ![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/a2106946-9db0-4af9-9c21-1518b3794578)
 
