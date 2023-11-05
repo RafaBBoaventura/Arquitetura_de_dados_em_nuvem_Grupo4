@@ -131,3 +131,112 @@ Em seguida no data factory, pipeline ProjetoPUC data flow, foi realizado o trata
 
 As tabelas (TabelaFinal e tabelafinal2) foram alocadas no Synapse Analytics com todos os dados já tratados para etapa final de visualização.
 
+# **Aprendizagem de Máquina**
+
+Fontes utilizadas para criar os modelos:
+
+Scikit-learn: https://scikit-learn.org/stable/ - Biblioteca de machine learning para Python
+
+TensorFlow: https://www.tensorflow.org/ - Biblioteca de machine learning para Python e outras linguagens
+
+Pandas: https://pandas.pydata.org/ - Biblioteca de análise de dados para Python
+
+Código em Python para executar os modelos
+
+**Modelo 1: Regressão Linear**
+
+Python
+
+# Importar as bibliotecas necessárias
+import numpy as np
+
+import pandas as pd
+
+from sklearn.linear_model import LinearRegression
+
+# Carregar os dados
+df = pd.read_csv("data.csv")
+
+# Separar as variáveis independentes e dependentes
+X = df.drop("preco", axis=1)
+
+y = df["preco"]
+
+# Criar o modelo de regressão linear
+model = LinearRegression()
+
+# Treinar o modelo
+model.fit(X, y)
+
+# Fazer previsões para os próximos dois anos
+preco_futuro = model.predict(X_futuro)
+
+**Modelo 2: Rede Neural Artificial**
+
+Python
+# Importar as bibliotecas necessárias
+import tensorflow as tf
+
+# Carregar os dados
+df = pd.read_csv("data.csv")
+
+# Separar as variáveis independentes e dependentes
+X = df.drop("preco", axis=1)
+
+y = df["preco"]
+
+# Criar o modelo de rede neural artificial
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Dense(128, activation="relu"),
+    tf.keras.layers.Dense(64, activation="relu"),
+    tf.keras.layers.Dense(1, activation="linear")
+])
+
+# Treinar o modelo
+model.compile(optimizer="adam", loss="mse")
+model.fit(X, y, epochs=100)
+
+# Fazer previsões para os próximos dois anos
+preco_futuro = model.predict(X_futuro)
+
+**Análise das vantagens e desvantagens dos modelos**
+
+**Modelo 1: Regressão Linear**
+
+* Vantagens:
+
+É um modelo relativamente simples de entender e implementar
+Requer poucos dados para treinar
+É relativamente rápido para treinar e fazer previsões
+
+* Desvantagens:
+
+Pode não ser capaz de capturar relações complexas entre as variáveis
+Pode ser enviesado por dados históricos
+
+
+**Modelo 2: Rede Neural Artificial**
+
+* Vantagens:
+
+Pode capturar relações complexas entre as variáveis
+É menos propenso a vieses do que os modelos lineares
+
+* Desvantagens:
+
+É mais complexo de entender e implementar
+Requer mais dados para treinar
+Pode ser mais lento para treinar e fazer previsões
+
+**Comparação entre os modelos**
+
+O modelo 1 é uma boa opção para dados simples, com poucas variáveis independentes e relações lineares entre elas. O modelo 2 é uma boa opção para dados mais complexos, com muitas variáveis independentes e relações não lineares entre elas.
+
+Para o caso específico dos dados de preços de gasolina e diesel no Brasil, o modelo 2 pode ser uma melhor opção, pois esses dados são complexos e envolvem muitas variáveis independentes, como a taxa de câmbio, o preço do petróleo e a inflação.
+
+**Outras considerações**
+
+Além dos modelos de machine learning, também é possível usar métodos estatísticos para prever o comportamento do preço dos combustíveis. Esses métodos podem ser mais simples e rápidos de implementar, mas podem não ser tão precisos quanto os modelos de machine learning.
+
+É importante considerar também os fatores que podem afetar o preço dos combustíveis no futuro, como a política de preços da Petrobras, as condições econômicas do Brasil e a geopolítica mundial.
+
