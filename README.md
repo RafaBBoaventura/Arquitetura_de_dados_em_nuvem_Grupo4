@@ -131,7 +131,7 @@ Em seguida no data factory, pipeline ProjetoPUC data flow, foi realizado o trata
 
 As tabelas (TabelaFinal e tabelafinal2) foram alocadas no Synapse Analytics com todos os dados já tratados para etapa final de visualização.
 
-# **Aprendizagem de Máquina**
+# **7. Aprendizagem de Máquina**
 
 Fontes utilizadas para criar os modelos:
 
@@ -224,6 +224,52 @@ plt.scatter(X_treinamento, Y_treinamento)
 plt.plot(X_teste,Funcao_Regressao.predict(X_teste),color="red");
 
 ![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/5a603e04-da4c-4699-bcd3-f4e17663ea71)
+
+
+# **7. Análise dos resultados**
+
+Acurácia em cada partição: [0.9854943110501782 ] 
+
+Acurácia média: 0.98 
+
+A acurácia é a exatidão de uma solução mais a sua precisão
+
+#PREVISÕES Erro médio da Regressão- Avalia a média que o modelo está errando 
+
+Previsoes = Funcao_Regressao.predict(X_teste )
+
+from sklearn import metrics
+print('RMSE',np.sqrt( metrics.mean_squared_error(Y_teste,Previsoes)))
+
+![image](https://github.com/RafaBBoaventura/Arquitetura_de_dados_em_nuvem_Grupo4/assets/131798428/2031e718-82b9-4691-8f74-27e2efe670c8)
+
+
+Foi criada uma matriz de confusão, porém a não foi possível gerar o gráfico.
+
+Erro nos valores do Y_Teste. 
+
+# Matriz de confusão
+
+Previsoes = Funcao_Regressao.predict(X_teste )
+
+from sklearn.metrics import confusion_matrix
+Matriz_Confusao = confusion_matrix(Y_teste, Previsoes)
+print( Matriz_Confusao )
+
+plt.figure( figsize=(10,5))
+sns.heatmap( Matriz_Confusao, annot=True)
+
+Para medir o percentual de assertividade realizado o comando abaixo, porém sem sucesso no resultado.
+# percentual de assertividade do modelo 
+
+from sklearn.metrics import classification_report
+
+report = classification_report( Y_teste, Previsoes)
+print(report)
+
+Conclusão final: identificamos que apesar de nossa base de dados ser volumosa, os dados indicados nela não foram suficientes para obter uma correlação para uma previsão. Adquirimos outros dados onde consta o preço do barril, para enriquecer nossa base original, porém não foi possível unificá-las devido divergências de data/período.
+
+Nosso grupo permanece buscando uma solução para conclusão desse projeto. 
 
 
 
